@@ -21,3 +21,7 @@ Initialize the terraform configuration
 ```
 $ terraform init
 ```
+Apply the changes
+```
+terraform apply
+```
