@@ -1,6 +1,8 @@
 # Quick Set up
 
-If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDolan/89120be904b531d5787d4785257fd8a1) to access the Gist for this project
+This is a consulting engagement I am working on where the client wants to test out a cloud service, automate some manual data cleaning, and create dashbaords for analysis.
+
+If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDolan/89120be904b531d5787d4785257fd8a1) to access the Gist for this project.
 
 ### System Requirements
 - AWS Account
