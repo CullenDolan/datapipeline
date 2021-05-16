@@ -20,4 +20,4 @@ $ export TF_VAR_db_password="hashicorp"
 Initialize the terraform configuration
 ```
 $ terraform init
-'''
+```
