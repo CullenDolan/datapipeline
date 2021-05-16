@@ -1,10 +1,18 @@
-#Data Pipeline for AWS
+# Quick Set up
 
-### Resources used:
-- S3
-- RDS
-- Lambda
+If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDolan/89120be904b531d5787d4785257fd8a1) to access the Gist for this project
+
+### System Requirements
+- AWS Account
 - Terraform
+- IDE of Choice
+- My OS is Ubuntu 20.04
+- PowerBI Desktop
+
+### AWS Resources used:
+- S3
+- RDS (Postgres or MS SQL Server - This is TBD)
+- Lambda
 
 ### Set up
 
