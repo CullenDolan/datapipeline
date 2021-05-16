@@ -23,5 +23,5 @@ $ terraform init
 ```
 Apply the changes
 ```
-terraform apply
+$ terraform apply
 ```
