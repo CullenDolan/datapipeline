@@ -77,3 +77,13 @@ resource "aws_iam_policy_attachment" "test-attach" {
   users      = [aws_iam_user.tf-file-upload.name]
   policy_arn = aws_iam_policy.tf-upload-policy.arn
 }
+
+# this wont work w/0 installing keybase download
+resource "aws_iam_user_login_profile" "tf-file-upload" {
+  user    = aws_iam_user.tf-file-upload.name
+  pgp_key = "keybase:tf-file-upload"
+}
+
+output "password" {
+  value = aws_iam_user_login_profile.tf-file-upload.encrypted_password
+}
