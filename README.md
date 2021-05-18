@@ -47,3 +47,7 @@ Add the extension for interfacing s3 to RDS
 ```
 psql=> CREATE EXTENSION aws_s3 CASCADE;
 ```
+Create a new table
+```
+psql=> CREATE TABLE tablename (col1 varchar(30), col2 varchar(30)...);
+```
