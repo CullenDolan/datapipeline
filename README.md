@@ -14,7 +14,7 @@ If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDo
 ### AWS Resources used:
 - S3
 - RDS (Postgres or MS SQL Server - This is TBD)
-- Lambda
+- Lambda or possibly just the built in services
 
 ### Set up
 
