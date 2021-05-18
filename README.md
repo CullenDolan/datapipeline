@@ -35,3 +35,11 @@ Apply the changes
 ```
 $ terraform apply
 ```
+PSQL code to run to connect to a db
+```
+psql \
+   --host=<DB instance endpoint> \
+   --port=<port> \
+   --username=<master username> \
+   --dbname=<database name> 
+```
