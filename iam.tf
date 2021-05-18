@@ -1,14 +1,14 @@
-resource "aws_iam_user" "tf-file-upload" {
-  name = "tf-file-upload"
+resource "aws_iam_user" "DataLoadUser" {
+  name = "DataLoadUser"
   force_destroy= true
 
   tags = {
-    Environment = "Dev"
+    Environment = "TF-Dev"
   }
 }
 
-resource "aws_iam_policy" "tf-upload-policy" {
-  name        = "tf-upload-policy"
+resource "aws_iam_policy" "DataLoadUserPolicy" {
+  name        = "DataLoadUserPolicy"
   path        = "/"
   description = "My test policy from terraform"
 
@@ -31,14 +31,24 @@ resource "aws_iam_policy" "tf-upload-policy" {
             "s3:ListAllMyBuckets"
         ]
         Effect   = "Allow"
-        Resource = "arn:aws:s3:::cullen-tf-s3-bucket-123"
+        Resource = "arn:aws:s3:::lscdatalake-dev"
       },
     ]
   })
+
+  tags = {
+    Environment = "TF-Dev"
+  }
 }
 
-resource "aws_iam_policy_attachment" "test-attach" {
-  name       = "tf-test-attachment"
-  users      = [aws_iam_user.tf-file-upload.name]
-  policy_arn = aws_iam_policy.tf-upload-policy.arn
+resource "aws_iam_policy_attachment" "AttachPolicytoUser" {
+  name       = "AttachPolicytoUser"
+  users      = [aws_iam_user.DataLoadUser.name]
+  policy_arn = aws_iam_policy.DataLoadUserPolicy.arn
 }
+
+// # add this once keybase is figured out
+// resource "aws_iam_user_login_profile" "DataLoadUserLogin" {
+//   user    = aws_iam_user.DataLoadUser.name
+//   pgp_key = "keybase:some_person_that_exists"
+// }
