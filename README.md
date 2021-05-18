@@ -43,3 +43,7 @@ psql \
    --username=<master username> \
    --dbname=<database name> 
 ```
+Add the extension for interfacing s3 to RDS
+```
+psql=> CREATE EXTENSION aws_s3 CASCADE;
+```
