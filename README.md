@@ -9,11 +9,11 @@ If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDo
 - Terraform
 - IDE of Choice
 - My OS is Ubuntu 20.04
-- PowerBI Desktop
 
 ### AWS Resources used:
 - S3
-- RDS (Postgres or MS SQL Server - This is TBD)
+- Postgres RDS 
+- aws_s3 extension for psql [Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Procedural.Importing.html#USER_PostgreSQL.S3Import)
 - Lambda or possibly just the built in services
 
 ### Set up
