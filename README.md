@@ -51,7 +51,7 @@ Create a new table
 ```
 psql=> CREATE TABLE tablename (col1 varchar(30), col2 varchar(30)...);
 ```
-Current steps but this will be moved to terraform (Helpful Link)[https://www.sqlshack.com/integrating-aws-s3-buckets-with-aws-rds-sql-server/]:
+Current steps but this will be moved to terraform [Helpful Link](https://www.sqlshack.com/integrating-aws-s3-buckets-with-aws-rds-sql-server/):
 - Create a Policy that can give access to read and get objects in the specific s3 bucket
 - Create a role and assign the policy to the role
 - add the role to RDS
