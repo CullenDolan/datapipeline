@@ -58,9 +58,10 @@ Current steps but this will be moved to terraform ([Helpful Link](https://www.sq
 
 Create the URI structure that will hold the s3 file referenced by table_import_from_s3
 ```
-psql=> SELECT aws_commons.create_s3_uri(
-   'sample_s3_bucket',
-   'sample.csv',
-   'us-east-1'
-) AS s3_uri \gset
+psql=> SELECT aws_commons.create_s3_uri('sample_s3_bucket','sample.csv','us-east-1') AS s3_uri 
+psql-> \gset
+```
+Import the data into RDS
+```
+psql=> SELECT aws_s3.table_import_from_s3('t1','','(format csv)',:'s3_uri');
 ```
