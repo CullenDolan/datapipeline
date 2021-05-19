@@ -25,7 +25,7 @@ $ cd datapipeline
 ```
 Add your password to the environment
 ```
-$ export TF_VAR_db_password="hashicorp"
+$ export TF_VAR_db_password="ADD PW HERE"
 ```
 Initialize the terraform configuration
 ```
