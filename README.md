@@ -55,3 +55,12 @@ Current steps but this will be moved to terraform ([Helpful Link](https://www.sq
 - Create a Policy that can give access to read and get objects in the specific s3 bucket
 - Create a role and assign the policy to the role
 - add the role to RDS
+
+Create the URI structure that will hold the s3 file referenced by table_import_from_s3
+```
+psql=> SELECT aws_commons.create_s3_uri(
+   'sample_s3_bucket',
+   'sample.csv',
+   'us-east-1'
+) AS s3_uri \gset
+```
