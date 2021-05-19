@@ -40,3 +40,9 @@ resource "aws_db_instance" "lscdevdbinstance" {
     Environment = "TF-Dev"
   }
 }
+
+resource "aws_db_instance_role_association" "lscdevdbs3attachement" {
+  db_instance_identifier = aws_db_instance.lscdevdbinstance.id
+  feature_name           = "S3_INTEGRATION"
+  role_arn               = aws_iam_role.RDStoS3Role.arn
+}
