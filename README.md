@@ -61,7 +61,7 @@ Create the URI structure that will hold the s3 file referenced by table_import_f
 psql=> SELECT aws_commons.create_s3_uri('sample_s3_bucket','sample.csv','us-east-1') AS s3_uri 
 psql-> \gset
 ```
-Import the data into RDS
+Import the data into RDS with the dataement
 ```
 psql=> SELECT aws_s3.table_import_from_s3('t1','','(format csv)',:'s3_uri');
 ```
