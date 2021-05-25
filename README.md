@@ -4,6 +4,8 @@ This is a consulting engagement I am working on where the client wants to test o
 
 If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDolan/89120be904b531d5787d4785257fd8a1) to access the Gist for this project.
 
+[AWS Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Procedural.Importing.html)
+
 ### System Requirements
 - AWS Account
 - Terraform
@@ -61,7 +63,7 @@ Create the URI structure that will hold the s3 file referenced by table_import_f
 psql=> SELECT aws_commons.create_s3_uri('sample_s3_bucket','sample.csv','us-east-1') AS s3_uri 
 psql-> \gset
 ```
-Import the data into RDS with the dataement
+Import the data into RDS:
 ```
 psql=> SELECT aws_s3.table_import_from_s3('t1','','(format csv)',:'s3_uri');
 ```
