@@ -72,3 +72,4 @@ Import the data into RDS:
 ```
 psql=> SELECT aws_s3.table_import_from_s3('t1','','(format csv)',:'s3_uri');
 ```
+Data is now accessible 
