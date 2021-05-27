@@ -2,8 +2,6 @@
 
 This is a consulting engagement I am working on where the client wants to test out a cloud service, automate some manual data cleaning, and create dashbaords for analysis.
 
-If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDolan/89120be904b531d5787d4785257fd8a1) to access the Gist for this project.
-
 [AWS Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Procedural.Importing.html)
 
 ### System Requirements
@@ -17,6 +15,11 @@ If you want to see the full detail [CLICK HERE](https://gist.github.com/CullenDo
 - Postgres RDS 
 - aws_s3 extension for psql ([Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Procedural.Importing.html#USER_PostgreSQL.S3Import))
 - Lambda or possibly just the built in services
+
+### High Level Steps
+1. Set up resources
+2. Give RDS access to S3
+3. Import S3 data into RDS
 
 ### Set up
 
