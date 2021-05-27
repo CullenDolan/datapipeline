@@ -17,9 +17,11 @@ This is a consulting engagement I am working on where the client wants to test o
 - Lambda or possibly just the built in services
 
 ### High Level Steps
-1. Set up resources
-2. Give RDS access to S3
-3. Import S3 data into RDS
+1. Set up AWS resources 
+2. Configure Database
+3. Give RDS access to S3
+4. Import S3 data into RDS
+
 
 ### Set up
 
