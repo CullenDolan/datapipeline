@@ -38,7 +38,7 @@ Initialize the terraform configuration
 ```
 $ terraform init
 ```
-Apply the changes
+Apply the changes (make sure to note endpoint, port, username, and db name)
 ```
 $ terraform apply
 ```
