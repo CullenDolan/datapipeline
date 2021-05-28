@@ -1,3 +1,4 @@
+# create a user for uploading
 resource "aws_iam_user" "DataLoadUser" {
   name = "DataLoadUser"
   force_destroy= true
@@ -7,13 +8,12 @@ resource "aws_iam_user" "DataLoadUser" {
   }
 }
 
+# policy to give the user access to s3
 resource "aws_iam_policy" "DataLoadUserPolicy" {
   name        = "DataLoadUserPolicy"
   path        = "/"
   description = "My test policy from terraform"
 
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -41,28 +41,26 @@ resource "aws_iam_policy" "DataLoadUserPolicy" {
   }
 }
 
+# attach policy to user
 resource "aws_iam_policy_attachment" "AttachPolicytoUser" {
   name       = "AttachPolicytoUser"
   users      = [aws_iam_user.DataLoadUser.name]
   policy_arn = aws_iam_policy.DataLoadUserPolicy.arn
 }
 
-
+# policy to give rds access to s3
 resource "aws_iam_role" "RDStoS3Role" {
   name = "RDStoS3Role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
         {
+            Effect = "Allow"
             Action = [
                 "s3:GetObject",
-                "s3:GetObjectTagging",
-                "s3:GetObjectVersion",
-                "s3:ListBucketVersions",
                 "s3:ListBucket",
-                "s3:ListJobs"
             ]
-            Effect = "Allow"
+            
             Resource = [
                 "arn:aws:s3:::lscdatalake-dev",
                 "arn:aws:s3:::lscdatalake-dev/*"
