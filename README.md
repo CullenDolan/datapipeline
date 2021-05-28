@@ -1,6 +1,6 @@
 # Quick Set up
 
-This is a consulting engagement I am working on where the client wants to test out a cloud service, automate some manual data cleaning, and create dashbaords for analysis.
+This is for a consulting engagement I am working on where the client wants to test out a cloud service, automate some manual data processing, and build dashbaords for analysis.
 
 [AWS Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Procedural.Importing.html)
 
