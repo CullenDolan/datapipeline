@@ -1,7 +1,7 @@
 # create a user for uploading
 resource "aws_iam_user" "DataLoadUser" {
-  name = "DataLoadUser"
-  force_destroy= true
+  name          = "DataLoadUser"
+  force_destroy = true
 
   tags = {
     Environment = "TF-Dev"
@@ -19,16 +19,16 @@ resource "aws_iam_policy" "DataLoadUserPolicy" {
     Statement = [
       {
         Action = [
-            "s3:PutObject",
-            "s3:GetObjectAcl",
-            "s3:GetObject",
-            "s3:RestoreObject",
-            "s3:ListBucket",
-            "s3:DeleteObject",
-            "s3:GetBucketLocation",
-            "s3:PutObjectAcl",
-            "s3:GetObjectVersion",
-            "s3:ListAllMyBuckets"
+          "s3:PutObject",
+          "s3:GetObjectAcl",
+          "s3:GetObject",
+          "s3:RestoreObject",
+          "s3:ListBucket",
+          "s3:DeleteObject",
+          "s3:GetBucketLocation",
+          "s3:PutObjectAcl",
+          "s3:GetObjectVersion",
+          "s3:ListAllMyBuckets"
         ]
         Effect   = "Allow"
         Resource = "arn:aws:s3:::lscdatalake-dev"
@@ -48,32 +48,7 @@ resource "aws_iam_policy_attachment" "AttachPolicytoUser" {
   policy_arn = aws_iam_policy.DataLoadUserPolicy.arn
 }
 
-# policy to give rds access to s3
-resource "aws_iam_role" "RDStoS3Role" {
-  name = "RDStoS3Role"
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-        {
-            Effect = "Allow"
-            Action = [
-                "s3:GetObject",
-                "s3:ListBucket",
-            ]
-            
-            Resource = [
-                "arn:aws:s3:::lscdatalake-dev",
-                "arn:aws:s3:::lscdatalake-dev/*"
-            ]
-        },
-    ]
-  })
-
-  tags = {
-    Environment = "TF-Dev"
-  }
-}
-
+// giving rds access to s3 isnt working
 // # add this once keybase is figured out
 // resource "aws_iam_user_login_profile" "DataLoadUserLogin" {
 //   user    = aws_iam_user.DataLoadUser.name
