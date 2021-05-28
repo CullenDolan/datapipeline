@@ -50,6 +50,8 @@ psql \
    --username=<master username> \
    --dbname=<database name> 
 ```
+You will then be prompted for the dbinstance password
+
 Add the extension for interfacing s3 to RDS
 ```
 psql=> CREATE EXTENSION aws_s3 CASCADE;
@@ -58,7 +60,7 @@ Create a new table
 ```
 psql=> CREATE TABLE tablename (col1 varchar(30), col2 varchar(30)...);
 ```
-Current steps but this will be moved to terraform ([Helpful Link](https://www.sqlshack.com/integrating-aws-s3-buckets-with-aws-rds-sql-server/)):
+Follow these steps to manaually attach policy ([Helpful Link](https://www.sqlshack.com/integrating-aws-s3-buckets-with-aws-rds-sql-server/)):
 - Create a Policy that can give access to read and get objects in the specific s3 bucket
 - Create a role and assign the policy to the role
 - add the role to RDS
