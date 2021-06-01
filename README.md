@@ -12,7 +12,7 @@ This is for a consulting engagement I am working on where the client wants to te
 
 ### AWS Resources used:
 - S3
-- Postgres RDS 
+- Postgres RDS or MS SQl Server
 - aws_s3 extension for psql ([Documentation](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Procedural.Importing.html#USER_PostgreSQL.S3Import))
 - Lambda or possibly just the built in services
 
