@@ -17,7 +17,7 @@ This is for a consulting engagement I am working on where the client wants to te
 - Lambda or possibly just the built in services
 
 ### High Level Steps
-1. Set up AWS resources 
+1. Set up AWS resources with Terraform
 2. Configure Database
 3. Give RDS access to S3
 4. Import S3 data into RDS
