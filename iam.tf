@@ -1,4 +1,5 @@
-# create a user for uploading
+# create a user for uploading data to s3
+# maybe swith this to a role?
 resource "aws_iam_user" "DataLoadUser" {
   name          = "DataLoadUser"
   force_destroy = true
@@ -48,7 +49,39 @@ resource "aws_iam_policy_attachment" "AttachPolicytoUser" {
   policy_arn = aws_iam_policy.DataLoadUserPolicy.arn
 }
 
-// giving rds access to s3 isnt working
+# rds policy
+resource "aws_iam_policy" "RDSAccessS3wTF"{
+  name        = "RDSAccessS3wTF"
+  path        = "/"
+  description = "Policy created w/ terraform to attach to an RDS instance, that will get data from an s3 bucket"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:GetObject",
+          "s3:ListBucket"
+        ]
+        Effect = "Allow"
+        Resource = [
+          "arn:aws:s3:::cullenbucketfordb",
+          "arn:aws:s3:::lscdatalake-dev",
+          "arn:aws:s3:::cullenbucketfordb/*",
+          "arn:aws:s3:::lscdatalake-dev/*"
+        ]
+      }
+    ]
+  })
+}
+
+# rds role
+
+# attach role to instance
+
+
+
+
 // # add this once keybase is figured out
 // resource "aws_iam_user_login_profile" "DataLoadUserLogin" {
 //   user    = aws_iam_user.DataLoadUser.name
