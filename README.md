@@ -42,7 +42,7 @@ Apply the changes (make sure to note endpoint, port, username, and db name)
 ```
 $ terraform apply
 ```
-PSQL code to run to connect to a db
+PSQL code to run to connect to a database
 ```
 psql \
    --host=<DB instance endpoint> \
