@@ -30,7 +30,7 @@ Clone the repo
 $ git clone https://github.com/CullenDolan/datapipeline.git
 $ cd datapipeline
 ```
-Add your password to the environment
+Add your password to the environment. (Only once)
 ```
 $ export TF_VAR_db_password="ADD PW HERE"
 ```
