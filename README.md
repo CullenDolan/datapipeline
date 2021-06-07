@@ -9,6 +9,9 @@ This is for a consulting engagement I am working on where the client wants to te
 - Terraform
 - IDE of Choice
 - My OS is Ubuntu 20.04
+- [PowerBI](https://docs.aws.amazon.com/en_us/whitepapers/latest/using-power-bi-with-aws-cloud/using-power-bi-with-aws-cloud.pdf?did=wp_card&trk=wp_card)
+- AWS VPN Client
+- AWS Direct Connect
 
 ### AWS Resources used:
 - S3
